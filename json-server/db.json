@@ -23,28 +23,28 @@
         },
         {
             "id": 4,
-            "name": "Grapes",
+            "name": "Avacado",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 3.99,
             "image": "img/fruite-item-4.jpg"
         },
         {
             "id": 5,
-            "name": "Grapes",
+            "name": "Banana",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 5.99,
             "image": "img/fruite-item-3.jpg"
         },
         {
             "id": 6,
-            "name": "Grapes",
+            "name": "Orange",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 5.99,
             "image": "img/fruite-item-1.jpg"
         },
         {
             "id": 7,
-            "name": "Grapes",
+            "name": "Berry",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 6.99,
             "image": "img/fruite-item-2.jpg"
@@ -58,7 +58,7 @@
         },
         {
             "id": 9,
-            "name": "Grapes",
+            "name": "Orange",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 4.99,
             "image": "img/fruite-item-1.jpg"
