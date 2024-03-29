@@ -22,6 +22,8 @@ import AppleIcon from '@mui/icons-material/Apple';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import { NavLink } from 'react-router-dom';
 import CategoryIcon from '@mui/icons-material/Category';
+import CountertopsIcon from '@mui/icons-material/Countertops';
+import RoomServiceIcon from '@mui/icons-material/RoomService';
 
 const drawerWidth = 240;
 
@@ -105,7 +107,9 @@ export default function Layout({ children }) {
     const FruitLayout = [
         { title: "Category", icon: <CategoryIcon />, to: "/admin/Category" },
         { title: "Product", icon: <AppleIcon />, to: "/admin/products" },
-        { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" }
+        { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" },
+        { title: "Count", icon: <CountertopsIcon />, to: "/admin/Counter" },
+        { title: "Facility", icon: <RoomServiceIcon />, to: "/admin/Facility" }
 
     ]
 
