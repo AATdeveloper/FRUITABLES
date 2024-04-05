@@ -1,7 +1,7 @@
 import { ADD_PRODUCTS } from "../ActionType";
 
 const inistialState = {
-    isLodaing: false,
+    isLoading: false,
     products: [],
     error: null
 }

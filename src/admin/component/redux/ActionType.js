@@ -8,7 +8,7 @@ export const UPDATE_DATA = "UPDATE_DATA"
 
 export const GET_DATA = "GET_DATA"
 
-
+export const LOADING_FACILITY = "LOADING_FACILITY"
 
 
 export const ADD_PRODUCTS = "ADD_PRODUCTS"

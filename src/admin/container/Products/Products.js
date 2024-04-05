@@ -45,7 +45,7 @@ function Products(props) {
 
   let productsSchema = object({
     name: string().required(),
-    discription: string().required(),
+    description: string().required(),
     price: string().required(),
 
   });
@@ -53,7 +53,7 @@ function Products(props) {
   const formik = useFormik({
     initialValues: {
       name: "",
-      discription: "",
+      description: "",
       price: ""
     },
     validationSchema: productsSchema,
@@ -88,7 +88,7 @@ function Products(props) {
 
   const columns = [
     { field: 'name', headerName: 'name', width: 130 },
-    { field: 'discription', headerName: 'discription', width: 130 },
+    { field: 'description', headerName: 'description', width: 130 },
     { field: 'price', headerName: 'price', width: 130 },
     {
       field: 'Action',
@@ -143,17 +143,17 @@ function Products(props) {
             />
             <TextField
               margin="dense"
-              id="discription"
-              name="discription"
-              label="Add Discription"
+              id="description"
+              name="description"
+              label="Add description"
               type="text"
               fullWidth
               variant="standard"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.discription}
-              error={errors.discription && touched.discription ? true : false}
-              helperText={errors.discription && touched.discription ? errors.discription : ""}
+              value={values.description}
+              error={errors.description && touched.description ? true : false}
+              helperText={errors.description && touched.description ? errors.description : ""}
             />
             <TextField
               margin="dense"
