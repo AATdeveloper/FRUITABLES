@@ -16,9 +16,9 @@ import Facility from '../admin/container/Facilities/Facility';
 
 
 function AdminRoutes(props) {
-    const store = configStore();
+    
     return (
-        <Provider store={store}>
+       
         <Layout>
             <Routes>
                 <Route exact path='/products' element={<Products />} />
@@ -29,7 +29,7 @@ function AdminRoutes(props) {
               
             </Routes>
         </Layout>
-        </Provider>
+      
     );
 }
 

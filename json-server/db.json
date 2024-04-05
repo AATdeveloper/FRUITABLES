@@ -1,5 +1,5 @@
 {
-    "fruits": [
+    "product": [
         {
             "id": 1,
             "name": "Grapes",
@@ -9,7 +9,7 @@
         },
         {
             "id": 2,
-            "name": "Grapes",
+            "name": "apple",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 2.99,
             "image": "img/fruite-item-5.jpg"
@@ -51,14 +51,14 @@
         },
         {
             "id": 8,
-            "name": "Grapes",
+            "name": "nuts",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 7.99,
             "image": "img/fruite-item-5.jpg"
         },
         {
             "id": 9,
-            "name": "Orange",
+            "name": "watermalon ",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
             "price": 4.99,
             "image": "img/fruite-item-1.jpg"

@@ -1,3 +1,20 @@
 export const INCREMENT_COUNTER = "INCREMENT_COUNTER"
 
 export const ADD_FACILITY = "ADD_FACILITY"
+
+export const DELETE_DATA = "DELETE_DATA"
+
+export const UPDATE_DATA = "UPDATE_DATA"
+
+export const GET_DATA = "GET_DATA"
+
+
+
+
+export const ADD_PRODUCTS = "ADD_PRODUCTS"
+
+export const DELETE_PRODUCTS = "DELETE_PRODUCTS"
+
+export const UPDATE_PRODUCTS = "UPDATE_PRODUCTS"
+
+export const GET_PRODUCTS = "GET_PRODUCTS"

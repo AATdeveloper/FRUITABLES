@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Header(props) {    
+function Header(props) {
     return (
         <div>
             {/* Navbar start */}
@@ -35,11 +35,11 @@ function Header(props) {
                                     <div className="dropdown-menu m-0 bg-secondary rounded-0">
                                         <NavLink to={"/cart"} className="dropdown-item">Cart</NavLink>
                                         <NavLink to={"/chackout"} className="dropdown-item">Chackout</NavLink>
-                                        <NavLink to={ "/testimonial"} className="dropdown-item">Testimonial</NavLink>
+                                        <NavLink to={"/testimonial"} className="dropdown-item">Testimonial</NavLink>
                                         <NavLink to={"/Error"} className="dropdown-item">404 Page</NavLink>
                                     </div>
                                 </div>
-                                <NavLink to= {"/contact"} className="nav-item nav-link">Contact</NavLink>
+                                <NavLink to={"/contact"} className="nav-item nav-link">Contact</NavLink>
                             </div>
                             <div className="d-flex m-3 me-0">
                                 <button className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search text-primary" /></button>
