@@ -1,5 +1,5 @@
-{
-    "product": [
+{     "fruts": [
+
         {
             "id": 1,
             "name": "Grapes",
@@ -63,5 +63,79 @@
             "price": 4.99,
             "image": "img/fruite-item-1.jpg"
         }
+    ],  "reviws": [
+        {
+            "id": 1,
+            "prodactid":"",
+            "name": "Grapes",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 2,
+            "prodactid":"",
+            "name": "apple",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 3,
+            "prodactid":"",
+            "name": "Raspberries",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 4,
+            "prodactid":"",
+            "name": "Avacado",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 5,
+            "prodactid":"",
+            "name": "Banana",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 6,
+            "prodactid":"",
+            "name": "Orange",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 7,
+            "prodactid":"",
+            "name": "Berry",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 8,
+            "prodactid":"",
+            "name": "nuts",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        },
+        {
+            "id": 9,
+            "prodactid":"",
+            "name": "watermalon ",
+            "email": "bhargavmovaliya576@gmail.com",
+            "review":"good prodact",
+            "reting": 5
+        }
     ]
+    
 }

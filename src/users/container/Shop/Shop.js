@@ -1,23 +1,70 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useFormik } from 'formik';
+import { object, string,  } from 'yup';
+import { Fruitsdata, setFruitsdata } from '../../../admin/component/redux/action/facility.action';
+import { getshop } from '../../../admin/component/redux/action/shop.action';
 
 function Shop(props) {
-  const [fruitData, setFruitsdata] = useState([]);
-  const getData = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/fruits");
-      const data = await response.json();
+  const [open, setOpen] = React.useState(false);
+    const [update, setUpdate] = React.useState()
+    const dispatch = useDispatch()
 
 
-      setFruitsdata(data);
+  let facilitesSchema = object({
+    prodactid: string().required(),
+    name: string().required(),
+});
 
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  const [Fruitsdata, setFruitsdata] = useState([]);
+
+
+  // const getData = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:8000/fruts");
+  //     const data = await response.json();
+
+
+  //     setFruitsdata(data);
+
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
   useEffect(() => {
-    getData();
+    // getData();
+    dispatch(getshop())
   }, [])
+
+
+
+const shop = useSelector(state => state.feuteditel)
+console.log(shop);
+
+// const columns = [
+//     { field: 'name', headerName: 'name', width: 130 },
+//     { field: 'discription', headerName: 'discription', width: 130 },
+    // {
+    //     field: 'Action',
+    //     headerName: 'Action',
+    //     width: 130,
+    //     renderCell: (params) => (
+    //         <>
+
+    //             <IconButton aria-label="delete" onClick={() => hendalEdit(params.row)}>
+    //                 <EditIcon />
+    //             </IconButton>
+    //             <IconButton aria-label="delete" onClick={() => handledelete(params.row.id)}>
+    //                 <DeleteIcon />
+    //             </IconButton>
+    //         </>
+    //     )
+
+
+    // },
+
+// ];
 
 
   return (
@@ -207,7 +254,7 @@ function Shop(props) {
                   <div className="col-lg-9">
                     <div className="row g-4 justify-content-center">
                       {
-                        fruitData.map((v) => (
+                        shop.fruts.map((v) => (
                           <div className="col-md-6 col-lg-6 col-xl-4">
                             <Link to={`/shop/${v.id}`}>
                               <div className="rounded position-relative fruite-item">

@@ -22,17 +22,17 @@ function Products(props) {
   const [update, setUpdate] = React.useState()
   const dispatch = useDispatch()
 
-  useEffect (() => {
+  useEffect(() => {
     dispatch(getProducts())
-  },[])
+  }, [])
 
-  
+
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
- 
+
 
 
 
