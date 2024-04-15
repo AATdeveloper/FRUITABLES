@@ -6,10 +6,10 @@ import Footer from '../users/component/footer/Footer';
 import Shop from '../users/container/Shop/Shop';
 import Shop_Detail from '../users/container/Shop_Detail/Shop_Detail';
 import Cart from '../users/container/Cart/Cart';
-import Chackout from '../users/container/Chackout/Chackout';
+// import Chackout from '../users/container/Chackout/Chackout';
 import Testimonial from '../users/container/testimonial/Testimonial';
 import Error from '../users/container/404Error/Error';
-import Contact from '../users/container/Contact/Contact';
+// import Contact from '../users/container/Contact/Contact';
 import PrivateRoutes from './PrivateRoutes';
 
 function UserRoutes(props) {
@@ -25,13 +25,13 @@ function UserRoutes(props) {
                 <Route exact path="/Cart" element={<Cart />} />
 
                 <Route element= {<PrivateRoutes/>}> 
-                <Route exact path="/Chackout" element={<Chackout />} />
+                {/* <Route exact path="/Chackout" element={<Chackout />} /> */}
                 </Route>
              
                 <Route exact path="/Testimonial" element={<Testimonial />} />
-                <Route exact path="/Chackout" element={<Chackout />} />
+          
                 <Route exact path="/Error" element={<Error />} />
-                <Route exact path="/Contact" element={<Contact />} />
+                {/* <Route exact path="/Contact" element={<Contact />} /> */}
 
             </Routes>
 
