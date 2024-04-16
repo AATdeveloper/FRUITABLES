@@ -1,10 +1,24 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addtocarting } from '../../../admin/component/redux/slice/cart.slice';
 
 function Shop_Detail(props) {
     const { id } = useParams();
+
+    const cart = useSelector((state) => state.cart)
+    console.log(cart);
     
     console.log(id);
+
+    const dispatch = useDispatch()
+
+    const handleAddToCart = () => {
+       dispatch(addtocarting(id))
+    }
+    
+    
+
     return (
         <div>
             {/* Single Page Header start */}
@@ -26,7 +40,7 @@ function Shop_Detail(props) {
                                 <div className="col-lg-6">
                                     <div className="border rounded">
                                         <a href="#">
-                                            <img src="img/single-item.jpg" className="img-fluid rounded" alt="Image" />
+                                            <img src="../img/single-item.jpg" className="img-fluid rounded" alt="Image" />
                                         </a>
                                     </div>
                                 </div>
@@ -56,7 +70,12 @@ function Shop_Detail(props) {
                                             </button>
                                         </div>
                                     </div>
-                                    <a href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                    <a 
+                                    onClick={handleAddToCart}
+                                    href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"> 
+                                    <i className="fa fa-shopping-bag me-2 text-primary" /> 
+                                    Add to cart
+                                    </a>
                                 </div>
                                 <div className="col-lg-12">
                                     <nav>
