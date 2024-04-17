@@ -1,4 +1,4 @@
-{     "fruts": [
+{     "product": [
 
         {
             "id": 1,
@@ -63,7 +63,8 @@
             "price": 4.99,
             "image": "img/fruite-item-1.jpg"
         }
-    ],  "reviws": [
+    ], 
+     "reviws": [
         {
             "id": 1,
             "prodactid":"",

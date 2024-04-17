@@ -5,6 +5,7 @@ import { useFormik } from 'formik';
 import { object, string,  } from 'yup';
 import { Fruitsdata, setFruitsdata } from '../../../admin/component/redux/action/facility.action';
 import { getshop } from '../../../admin/component/redux/action/shop.action';
+import { getProducts } from '../../../admin/component/redux/action/product.action';
 
 function Shop(props) {
   const [open, setOpen] = React.useState(false);
@@ -34,12 +35,12 @@ function Shop(props) {
   // }
   useEffect(() => {
     // getData();
-    dispatch(getshop())
+    dispatch(getProducts())
   }, [])
 
 
 
-const shop = useSelector(state => state.feuteditel)
+const shop = useSelector(state => state.products)
 console.log(shop);
 
 // const columns = [
@@ -254,7 +255,7 @@ console.log(shop);
                   <div className="col-lg-9">
                     <div className="row g-4 justify-content-center">
                       {
-                        shop.fruts.map((v) => (
+                        shop.products.map((v) => (
                           <div className="col-md-6 col-lg-6 col-xl-4">
                             <Link to={`/shop/${v.id}`}>
                               <div className="rounded position-relative fruite-item">

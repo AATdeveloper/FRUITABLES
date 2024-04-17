@@ -15,12 +15,12 @@ export const cartSlice = createSlice({
     console.log(action);
 
     const index = state.carting.findIndex((v) => v.pid === action.payload);
-    if  (index !== 0) {
-      state.carting[index].qty ++;
+    if  (index !== -1) {
+      state.carting[index].qty++;
     }else {
         state.carting.push({pid :action.payload , qty: 1})
     }
-    
+    console.log(state.carting);
    }
   },
 })

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addtocarting } from '../../../admin/component/redux/slice/cart.slice';
@@ -17,7 +17,7 @@ function Shop_Detail(props) {
        dispatch(addtocarting(id))
     }
     
-    
+
 
     return (
         <div>
@@ -44,6 +44,8 @@ function Shop_Detail(props) {
                                         </a>
                                     </div>
                                 </div>
+
+                                
                                 <div className="col-lg-6">
                                     <h4 className="fw-bold mb-3">Brocoli</h4>
                                     <p className="mb-3">Category: Vegetables</p>

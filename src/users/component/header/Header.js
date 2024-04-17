@@ -1,10 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 function Header(props) {
 
- 
-    
+
+
+    const cart = useSelector(state => state.cart);
+    console.log(cart);
+
+    const totalcartQty = cart.carting.reduce((acc, v) => acc + v.qty, 0);
+
+
+
     return (
         <div>
             {/* Navbar start */}
@@ -30,7 +38,7 @@ function Header(props) {
                         </button>
                         <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                             <div className="navbar-nav mx-auto">
-                                
+
                                 <NavLink to={"/"} className="nav-item nav-link active">Home</NavLink>
                                 <NavLink to={"/shop"} className="nav-item nav-link">Shop</NavLink>
                                 <NavLink to={"/shop_detail"} className="nav-item nav-link">Shop Detail</NavLink>
@@ -47,9 +55,11 @@ function Header(props) {
                             </div>
                             <div className="d-flex m-3 me-0">
                                 <button className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search text-primary" /></button>
-                                <NavLink  to={"/cart"} NavLink href="#" className="position-relative me-4 my-auto">
+                                <NavLink to={"/cart"} NavLink href="#" className="position-relative me-4 my-auto">
                                     <i className="fa fa-shopping-bag fa-2x" />
-                                    <span className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style={{ top: '-5px', left: 15, height: 20, minWidth: 20 }}>3</span>
+                                    <span className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style={{ top: '-5px', left: 15, height: 20, minWidth: 20 }}>
+                                        {totalcartQty}
+                                    </span>
                                 </NavLink>
                                 <a href="#" className="my-auto">
                                     <i className="fas fa-user fa-2x" />
