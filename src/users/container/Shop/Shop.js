@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
-import { object, string,  } from 'yup';
+import { object, string, } from 'yup';
 import { Fruitsdata, setFruitsdata } from '../../../admin/component/redux/action/facility.action';
 import { getshop } from '../../../admin/component/redux/action/shop.action';
 import { getProducts } from '../../../admin/component/redux/action/product.action';
+import { addtocarting } from '../../../admin/component/redux/slice/cart.slice';
 
 function Shop(props) {
   const [open, setOpen] = React.useState(false);
-    const [update, setUpdate] = React.useState()
-    const dispatch = useDispatch()
+  const [update, setUpdate] = React.useState()
+  const dispatch = useDispatch()
 
 
   let facilitesSchema = object({
     prodactid: string().required(),
     name: string().required(),
-});
+  });
 
   const [Fruitsdata, setFruitsdata] = useState([]);
 
@@ -40,32 +41,36 @@ function Shop(props) {
 
 
 
-const shop = useSelector(state => state.products)
-console.log(shop);
+  const shop = useSelector(state => state.products)
+  console.log(shop);
 
-// const columns = [
-//     { field: 'name', headerName: 'name', width: 130 },
-//     { field: 'discription', headerName: 'discription', width: 130 },
-    // {
-    //     field: 'Action',
-    //     headerName: 'Action',
-    //     width: 130,
-    //     renderCell: (params) => (
-    //         <>
+  // const columns = [
+  //     { field: 'name', headerName: 'name', width: 130 },
+  //     { field: 'discription', headerName: 'discription', width: 130 },
+  // {
+  //     field: 'Action',
+  //     headerName: 'Action',
+  //     width: 130,
+  //     renderCell: (params) => (
+  //         <>
 
-    //             <IconButton aria-label="delete" onClick={() => hendalEdit(params.row)}>
-    //                 <EditIcon />
-    //             </IconButton>
-    //             <IconButton aria-label="delete" onClick={() => handledelete(params.row.id)}>
-    //                 <DeleteIcon />
-    //             </IconButton>
-    //         </>
-    //     )
+  //             <IconButton aria-label="delete" onClick={() => hendalEdit(params.row)}>
+  //                 <EditIcon />
+  //             </IconButton>
+  //             <IconButton aria-label="delete" onClick={() => handledelete(params.row.id)}>
+  //                 <DeleteIcon />
+  //             </IconButton>
+  //         </>
+  //     )
 
 
-    // },
+  // },
 
-// ];
+  // ];
+  const handleAddtoCart = (id) => {
+    dispatch(addtocarting({ id, count: 1 }))
+  }
+
 
 
   return (
@@ -268,7 +273,7 @@ console.log(shop);
                                   <p>{v.description}</p>
                                   <div className="d-flex justify-content-between flex-lg-wrap">
                                     <p className="text-dark fs-5 fw-bold mb-0">${v.price} / kg</p>
-                                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                    <Link onClick={() => handleAddtoCart(v.id)} className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</Link>
                                   </div>
                                 </div>
                               </div>

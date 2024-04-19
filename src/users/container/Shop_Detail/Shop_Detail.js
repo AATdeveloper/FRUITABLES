@@ -1,22 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { addtocarting } from '../../../admin/component/redux/slice/cart.slice';
+import { Preview } from '@mui/icons-material';
 
 function Shop_Detail(props) {
+
+    const [count, setcount] = useState(1);
     const { id } = useParams();
 
     const cart = useSelector((state) => state.cart)
     console.log(cart);
-    
+
     console.log(id);
 
     const dispatch = useDispatch()
 
     const handleAddToCart = () => {
-       dispatch(addtocarting(id))
+        dispatch(addtocarting({ id, count }))
     }
-    
+
+
+    const handleinc = () => {
+        setcount(Preview => Preview + 1)
+    }
+
+    const handledec = () => {
+        if (count > 1) {
+            setcount(Preview => Preview - 1)
+        }
+    }
+
+
 
 
     return (
@@ -45,7 +60,7 @@ function Shop_Detail(props) {
                                     </div>
                                 </div>
 
-                                
+
                                 <div className="col-lg-6">
                                     <h4 className="fw-bold mb-3">Brocoli</h4>
                                     <p className="mb-3">Category: Vegetables</p>
@@ -61,23 +76,25 @@ function Shop_Detail(props) {
                                     <p className="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish</p>
                                     <div className="input-group quantity mb-5" style={{ width: 100 }}>
                                         <div className="input-group-btn">
-                                            <button className="btn btn-sm btn-minus rounded-circle bg-light border">
+                                            <button onClick={() => handledec()} className="btn btn-sm btn-minus rounded-circle bg-light border">
                                                 <i className="fa fa-minus" />
                                             </button>
                                         </div>
-                                        <input type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
+                                        <span className="form-control form-control-sm text-center border-0"  >
+                                            {count}
+                                        </span>
                                         <div className="input-group-btn">
-                                            <button className="btn btn-sm btn-plus rounded-circle bg-light border">
+                                            <button onClick={() => handleinc()} className="btn btn-sm btn-plus rounded-circle bg-light border">
                                                 <i className="fa fa-plus" />
                                             </button>
                                         </div>
                                     </div>
-                                    <a 
-                                    onClick={handleAddToCart}
-                                    href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"> 
-                                    <i className="fa fa-shopping-bag me-2 text-primary" /> 
-                                    Add to cart
-                                    </a>
+                                    <Link
+                                        onClick={handleAddToCart}
+                                        href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">
+                                        <i className="fa fa-shopping-bag me-2 text-primary" />
+                                        Add to cart
+                                    </Link>
                                 </div>
                                 <div className="col-lg-12">
                                     <nav>

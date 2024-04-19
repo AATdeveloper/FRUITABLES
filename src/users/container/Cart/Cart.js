@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../../admin/component/redux/action/product.action';
+import { decrementQTy, incrementQTy, removeProducts } from '../../../admin/component/redux/slice/cart.slice';
 
 function Cart(props) {
 
@@ -24,17 +25,9 @@ function Cart(props) {
 
         return { ...product, qty: v.qty };
 
-
-
-
-
     })
 
-
-
     console.log(cartdata);
-
-
 
 
 
@@ -89,24 +82,24 @@ function Cart(props) {
                                                             <i className="fa fa-minus" />
                                                         </button>
                                                     </div>
-                                                    <input type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
+                                                    <span type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
                                                     <div className="input-group-btn">
-                                                        <button className="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                        <button  className="btn btn-sm btn-plus rounded-circle bg-light border">
                                                             <i className="fa fa-plus" />
                                                         </button>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                <p className="mb-0 mt-4">2.99 $</p>
+                                                <p className="mb-0 mt-4">{(v.price * v.qty)} $</p>
                                             </td>
                                             <td>
-                                                <button className="btn btn-md rounded-circle bg-light border mt-4">
+                                                <button className="btn btn-md rounded-circle bg-light border mt-4" >
                                                     <i className="fa fa-times text-danger" />
                                                 </button>
                                             </td>
                                         </tr>
-                                        
+
                                     </>
                                 ))}
 
