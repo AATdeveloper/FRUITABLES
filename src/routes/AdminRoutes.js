@@ -8,6 +8,7 @@ import { configStore } from '../admin/component/redux/store';
 import { Provider } from 'react-redux';
 import Counter from '../admin/container/Counter';
 import Facility from '../admin/container/Facilities/Facility';
+import Coupen from '../admin/container/Coupen/Coupen';
 
 
 
@@ -26,6 +27,7 @@ function AdminRoutes(props) {
                 <Route exact path='/Category' element={<Category/>}/>
                 <Route exact path='/Counter' element={<Counter/>}/>
                 <Route exact path='/Facility' element={<Facility/>}/>
+                <Route exact path='/coupen' element={<Coupen/>}/>
               
             </Routes>
         </Layout>

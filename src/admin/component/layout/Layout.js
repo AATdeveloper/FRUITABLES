@@ -109,7 +109,9 @@ export default function Layout({ children }) {
         { title: "Product", icon: <AppleIcon />, to: "/admin/products" },
         { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" },
         { title: "Count", icon: <CountertopsIcon />, to: "/admin/Counter" },
-        { title: "Facility", icon: <RoomServiceIcon />, to: "/admin/Facility" }
+        { title: "Facility", icon: <RoomServiceIcon />, to: "/admin/Facility" },
+        { title: "Coupen", icon: <RoomServiceIcon />, to: "/admin/Coupen" }
+
 
     ]
 

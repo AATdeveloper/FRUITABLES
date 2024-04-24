@@ -5,6 +5,7 @@ import { ProductsReducer } from "./products.reducer";
 import { feuteditelReducer } from "./shop.reducece";
 import counterSlice from "../slice/counter.slice";
 import cartSlice from "../slice/cart.slice";
+import coupenSlice from "../slice/coupen.slice";
 
 export const rootReducer = combineReducers({
     counter: counterReducer,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
     products: ProductsReducer,
     feuteditel:feuteditelReducer,
     counter_slice : counterSlice,
-    cart:cartSlice
+    cart:cartSlice,
+    coupen:coupenSlice
 })
