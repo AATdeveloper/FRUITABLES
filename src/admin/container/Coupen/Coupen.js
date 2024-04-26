@@ -15,7 +15,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { getProducts } from '../../component/redux/action/product.action';
-import { addCoupen } from '../../component/redux/slice/coupen.slice';
+import { addCoupen, deleteCoupen, deleteCoupon, editCoupen, editCoupon, getCoupen, getCoupon } from '../../component/redux/slice/coupen.slice';
 
 function Coupen(props) {
   const [open, setOpen] = React.useState(false);
@@ -26,7 +26,7 @@ function Coupen(props) {
   console.log(coupen);
 
   useEffect(() => {
-
+    dispatch(getCoupen())
   }, [])
 
 
@@ -54,6 +54,7 @@ function Coupen(props) {
 
   });
 
+  
   const formik = useFormik({
     initialValues: {
       coupen: "",
@@ -63,35 +64,32 @@ function Coupen(props) {
     validationSchema: coupensSchema,
 
     onSubmit: (values, { resetForm }) => {
-
+      console.log(values);
       if (update) {
-
+        dispatch(editCoupen(values));
       } else {
-
-        dispatch(addCoupen(values))
+        dispatch(addCoupen(values));
       }
       resetForm();
       handleClose();
-
     },
   });
 
   const { handleBlur, handleChange, handleSubmit, errors, values, touched } = formik
 
-  const handledelete = (id) => {
-
-  }
-
-  const hendalEdit = (data) => {
+  const handleDelete = (id) => {
+    dispatch(deleteCoupen(id));
+  };
+  const handleEdit = (data) => {
+    formik.setValues(data);
+    setUpdate(true);
     setOpen(true);
-    formik.setValues(data)
-    setUpdate(data)
-
-
-  }
+  };
 
 
 
+  const coupens = useSelector(state => state.coupen)
+  console.log(coupens);
 
 
 
@@ -103,13 +101,14 @@ function Coupen(props) {
       field: 'Action',
       headerName: 'Action',
       width: 130,
-      renderCell: (params) => (
+      renderCell: ( params ) => (
         <>
 
-          <IconButton aria-label="edit" onClick={() => hendalEdit(params.row)}>
+          <IconButton onClick={() => handleEdit(params.row)} variant="contained">
             <EditIcon />
           </IconButton>
-          <IconButton aria-label="delete" onClick={() => handledelete(params.row.id)}>
+
+          <IconButton onClick={() => handleDelete(params.row.id)} variant="contained">
             <DeleteIcon />
           </IconButton>
         </>
@@ -123,6 +122,7 @@ function Coupen(props) {
   const rows = [
 
   ];
+
 
   return (
     <div>
@@ -139,16 +139,16 @@ function Coupen(props) {
             <TextField
               margin="dense"
               id="Coupen"
-              Coupen="Coupen"
-              label="Coupen"
+              name="coupen"
+              label="coupen"
               type="text"
               fullWidth
               variant="standard"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.Coupen}
-              error={errors.Coupen && touched.Coupen ? true : false}
-              helperText={errors.Coupen && touched.Coupen ? errors.Coupen : ""}
+              value={values.coupen}
+              error={errors.coupen && touched.coupen ? true : false}
+              helperText={errors.coupen && touched.coupen ? errors.coupen : ""}
             />
             <TextField
               margin="dense"
@@ -185,9 +185,9 @@ function Coupen(props) {
           </DialogContent>
         </form>
       </Dialog>
-      {/* <div style={{ height: 400, width: '100%' }}>
+      <div style={{ height: 400, width: '100%' }}>
         <DataGrid
-          rows={products.products}
+          rows={coupen.coupen}
           columns={columns}
           initialState={{
             pagination: {
@@ -197,7 +197,7 @@ function Coupen(props) {
           pageSizeOptions={[5, 10]}
           checkboxSelection
         />
-      </div> */}
+      </div>
     </div>
   );
 }

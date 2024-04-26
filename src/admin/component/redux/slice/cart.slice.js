@@ -22,30 +22,25 @@ export const cartSlice = createSlice({
       }
       console.log(state.carting);
     },
-    // incrementqty: (state, action) => {
-    //   console.log(action.payload);
-    //   const index = state.carting.findIndex((v) => v.pid === action.payload);
-    //   if (index !== -1) {
-    //     state.carting[index].qty++;
-    //   }
+    incrementQty: (state, action) => {
+      console.log(action);
+      const index = state.cart.findIndex((v) => v.pid === action.payload);
+      state.cart[index].qty++;
+  },
 
-    // },
-    // decrementqty: (state, action) => {
-    //   console.log(action);
-    //   const index = state.carting.findIndex((v) => v.pid === action.payload);
-    //   if (index !== -1 && state.carting[index].qty > 1) {
-    //     state.carting[index].qty--;
+  decrementQty: (state, action) => {
+      console.log(action);
+      const index = state.cart.findIndex((v) => v.pid === action.payload);
+      state.cart[index].qty--;
+  },
 
-    //   }
-
-    // },
-    // removeProducts: (state, action) => {
-    //   state.carting = state.carting.filter((v) => v.pid !== action.payload)
-    // }
+  removeProducts: (state, action) => {
+      state.cart = state.cart.filter((v) => v.pid !== action.payload)
+  }
 
   }
 })
 
-export const { addtocarting } = cartSlice.actions
+export const { addtocarting,incrementQty ,decrementQty,removeProducts} = cartSlice.actions
 
 export default cartSlice.reducer
