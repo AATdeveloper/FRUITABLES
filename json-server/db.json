@@ -1,143 +1,221 @@
-{     "product": [
-
-        {
-            "id": 1,
-            "name": "Grapes",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 1.99,
-            "image": "img/fruite-item-5.jpg"
-        },
-        {
-            "id": 2,
-            "name": "apple",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 2.99,
-            "image": "img/fruite-item-5.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Raspberries",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 3.99,
-            "image": "img/fruite-item-2.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Avacado",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 3.99,
-            "image": "img/fruite-item-4.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Banana",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 5.99,
-            "image": "img/fruite-item-3.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Orange",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 5.99,
-            "image": "img/fruite-item-1.jpg"
-        },
-        {
-            "id": 7,
-            "name": "Berry",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 6.99,
-            "image": "img/fruite-item-2.jpg"
-        },
-        {
-            "id": 8,
-            "name": "nuts",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 7.99,
-            "image": "img/fruite-item-5.jpg"
-        },
-        {
-            "id": 9,
-            "name": "watermalon ",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-            "price": 4.99,
-            "image": "img/fruite-item-1.jpg"
-        }
-    ], 
-     "reviws": [
-        {
-            "id": 1,
-            "prodactid":"",
-            "name": "Grapes",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 2,
-            "prodactid":"",
-            "name": "apple",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 3,
-            "prodactid":"",
-            "name": "Raspberries",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 4,
-            "prodactid":"",
-            "name": "Avacado",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 5,
-            "prodactid":"",
-            "name": "Banana",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 6,
-            "prodactid":"",
-            "name": "Orange",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 7,
-            "prodactid":"",
-            "name": "Berry",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 8,
-            "prodactid":"",
-            "name": "nuts",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        },
-        {
-            "id": 9,
-            "prodactid":"",
-            "name": "watermalon ",
-            "email": "bhargavmovaliya576@gmail.com",
-            "review":"good prodact",
-            "reting": 5
-        }
-    ],
-    "coupens": []
-    
+{
+  "product": [
+    {
+      "id": "1",
+      "name": "Grapes",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 1.99,
+      "image": "img/fruite-item-5.jpg"
+    },
+    {
+      "id": "2",
+      "name": "apple",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 2.99,
+      "image": "img/fruite-item-5.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Raspberries",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 3.99,
+      "image": "img/fruite-item-2.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Avacado",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 3.99,
+      "image": "img/fruite-item-4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Banana",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 5.99,
+      "image": "img/fruite-item-3.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Orange",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 5.99,
+      "image": "img/fruite-item-1.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Berry",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 6.99,
+      "image": "img/fruite-item-2.jpg"
+    },
+    {
+      "id": "8",
+      "name": "nuts",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 7.99,
+      "image": "img/fruite-item-5.jpg"
+    },
+    {
+      "id": "9",
+      "name": "watermalon ",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      "price": 4.99,
+      "image": "img/fruite-item-1.jpg"
+    }
+  ],
+  "reviws": [
+    {
+      "id": "1",
+      "prodactid": "",
+      "name": "Grapes",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "2",
+      "prodactid": "",
+      "name": "apple",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "3",
+      "prodactid": "",
+      "name": "Raspberries",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "4",
+      "prodactid": "",
+      "name": "Avacado",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "5",
+      "prodactid": "",
+      "name": "Banana",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "6",
+      "prodactid": "",
+      "name": "Orange",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "7",
+      "prodactid": "",
+      "name": "Berry",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "8",
+      "prodactid": "",
+      "name": "nuts",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    },
+    {
+      "id": "9",
+      "prodactid": "",
+      "name": "watermalon ",
+      "email": "bhargavmovaliya576@gmail.com",
+      "review": "good prodact",
+      "reting": 5
+    }
+  ],
+  "coupens": [
+    {
+      "id": "7b4b",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "fea4",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "54c3",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "3128",
+      "coupen": "APR24",
+      "percentage": "50",
+      "expiry": "2024-04-30"
+    },
+    {
+      "id": "0055",
+      "coupen": "APR24",
+      "percentage": "10",
+      "expiry": "2024-05-08"
+    },
+    {
+      "id": "7663",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-30"
+    },
+    {
+      "id": "cb81",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-30"
+    },
+    {
+      "id": "a76c",
+      "coupen": "APR24",
+      "percentage": "50",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "7612",
+      "coupen": "APR24",
+      "percentage": "20",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "9350",
+      "coupen": "APR24",
+      "percentage": "50",
+      "expiry": "2024-04-26"
+    },
+    {
+      "id": "da61",
+      "coupen": "APR2024",
+      "percentage": "15",
+      "expiry": "2024-04-30"
+    },
+    {
+      "id": "480b",
+      "coupen": "APR2024",
+      "percentage": "15",
+      "expiry": "2024-04-30"
+    },
+    {
+      "id": "08c6",
+      "coupen": "APR2024",
+      "percentage": "15",
+      "expiry": "2024-04-30"
+    }
+  ]
 }
