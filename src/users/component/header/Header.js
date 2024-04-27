@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { ThemeContext } from '../../../contex/ThemeContext';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightIcon from '@mui/icons-material/Light';
 
 function Header(props) {
 
@@ -11,12 +14,17 @@ function Header(props) {
 
     const totalcartQty = cart.carting.reduce((acc, v) => acc + v.qty, 0);
 
+    const themeContext = useContext(ThemeContext);
+    console.log(themeContext);
 
+    const handleTheme = () => {
+        themeContext.toggleTheme(themeContext.theme)
+    }
 
     return (
         <div>
             {/* Navbar start */}
-            <div className="container-fluid fixed-top">
+            <div className={`container-fluid fixed-top ${themeContext.theme}`}>
                 <div className="container topbar bg-primary d-none d-lg-block">
                     <div className="d-flex justify-content-between">
                         <div className="top-info ps-2">
@@ -28,6 +36,8 @@ function Header(props) {
                             <a href="#" className="text-white"><small className="text-white mx-2">Terms of Use</small>/</a>
                             <a href="#" className="text-white"><small className="text-white ms-2">Sales and Refunds</small></a>
                         </div>
+
+                       
                     </div>
                 </div>
                 <div className="container px-0">
@@ -66,6 +76,9 @@ function Header(props) {
                                 </a>
                             </div>
                         </div>
+                        
+                        <LightIcon onClick={handleTheme}>Change Theme</LightIcon>
+
                     </nav>
                 </div>
             </div>

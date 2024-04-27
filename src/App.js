@@ -6,12 +6,14 @@ import PrivateRoutes from "./routes/PrivateRoutes";
 import { Provider } from "react-redux";
 import { configStore } from "./admin/component/redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
+import { ThemeProvider } from "./contex/ThemeContext";
 
 
 function App() {
   const { store, persistor } = configStore();
   return (
     <>
+    <ThemeProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Routes>
@@ -24,6 +26,7 @@ function App() {
           </Routes>
         </PersistGate>
       </Provider>
+      </ThemeProvider>
 
     </>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Router, Routes } from 'react-router-dom';
 import Header from '../users/component/header/Header';
 import Home from '../users/container/home/Home';
@@ -11,10 +11,13 @@ import Testimonial from '../users/container/testimonial/Testimonial';
 import Error from '../users/container/404Error/Error';
 // import Contact from '../users/container/Contact/Contact';
 import PrivateRoutes from './PrivateRoutes';
+import { ThemeContext } from '../contex/ThemeContext';
 
 function UserRoutes(props) {
+    const theme = useContext(ThemeContext);
+    console.log(theme);
     return (
-        <div>
+        <div className={theme.theme}>
             <Header />
 
             <Routes>
