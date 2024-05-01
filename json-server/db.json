@@ -138,5 +138,19 @@
       "reting": 5
     }
   ],
-  "coupens": []
+  "coupens": [],
+  "contacts": [
+    {
+      "id": "5bee",
+      "address": "aaa",
+      "email": "saad345@gmail.com",
+      "phone": "1236544458"
+    },
+    {
+      "id": "4b7d",
+      "address": "aaa",
+      "email": "saad345@gmail.com",
+      "phone": "14523698"
+    }
+  ]
 }

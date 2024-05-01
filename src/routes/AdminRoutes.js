@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import Counter from '../admin/container/Counter';
 import Facility from '../admin/container/Facilities/Facility';
 import Coupen from '../admin/container/Coupen/Coupen';
+import Contact from '../admin/container/Contact/Contact';
 
 
 
@@ -28,6 +29,7 @@ function AdminRoutes(props) {
                 <Route exact path='/Counter' element={<Counter/>}/>
                 <Route exact path='/Facility' element={<Facility/>}/>
                 <Route exact path='/coupen' element={<Coupen/>}/>
+                <Route exact path='/contact' element={<Contact/>}/>
               
             </Routes>
         </Layout>

@@ -25,6 +25,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import CountertopsIcon from '@mui/icons-material/Countertops';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import ContactsIcon from '@mui/icons-material/Contacts';
 
 const drawerWidth = 240;
 
@@ -111,7 +112,8 @@ export default function Layout({ children }) {
         { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" },
         { title: "Count", icon: <CountertopsIcon />, to: "/admin/Counter" },
         { title: "Facility", icon: <RoomServiceIcon />, to: "/admin/Facility" },
-        { title: "Coupen", icon: <LocalOfferIcon />, to: "/admin/Coupen" }
+        { title: "Coupen", icon: <LocalOfferIcon />, to: "/admin/Coupen" },
+        { title: "contact", icon: <ContactsIcon />, to: "/admin/contact" }
 
 
     ]

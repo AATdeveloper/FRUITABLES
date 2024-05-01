@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { baseURL } from '../../../../utils/baseURL';
 import Products from '../../../container/Products/Products';
 import { type } from '@testing-library/user-event/dist/type';
 import {  GET_PRODUCTS } from '../ActionType';
+import { baseURL } from '../../../../Utils/baseURL';
 
 export const getProducts = () => (dispacth) => {
     try {

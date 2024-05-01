@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // import { GET_SHOP } from '../ActionType';
-import { baseURL } from '../../../../utils/baseURL';
 import { GET_FRUTES_DATA } from '../ActionType';
+import { baseURL } from '../../../../Utils/baseURL';
 
 
 
