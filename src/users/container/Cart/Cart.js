@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../../admin/component/redux/action/product.action';
 import { decrementQTy, decrementQty, decrementqty, incrementQTy, incrementQty, incrementqty, removeProducts } from '../../../admin/component/redux/slice/cart.slice';
+import Products from '../../../admin/container/Products/Products';
+import Button from '../../component/UI/Button/Button';
 
 function Cart(props) {
 
@@ -44,8 +46,8 @@ function Cart(props) {
     }
 
 
-    const Total = products.reduce((acc, v) => acc + v.qty * v.price, 0);
-    const total = Total * 1
+    // const Total = productsdata.reduce((acc, v) => acc + v.qty * v.price, 0);
+    // const total = Total * 1
 
 
     return (
@@ -99,8 +101,8 @@ function Cart(props) {
                                                         </button>
                                                     </div>
                                                     <span type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
-                                                    <div   onClick={() => handleInc(v.id) }className="input-group-btn">
-                                                        <button  className="btn btn-sm btn-plus rounded-circle bg-light border">
+                                                    <div onClick={() => handleInc(v.id)} className="input-group-btn">
+                                                        <button className="btn btn-sm btn-plus rounded-circle bg-light border">
                                                             <i className="fa fa-plus" />
                                                         </button>
                                                     </div>
@@ -134,7 +136,7 @@ function Cart(props) {
                                     <h1 className="display-6 mb-4">Cart <span className="fw-normal">Total</span></h1>
                                     <div className="d-flex justify-content-between mb-4">
                                         <h5 className="mb-0 me-4">Subtotal:</h5>
-                                        <p className="mb-0">${total}</p>
+                                        {/* <p className="mb-0">${total}</p> */}
                                     </div>
                                     <div className="d-flex justify-content-between">
                                         <h5 className="mb-0 me-4">Shipping</h5>
@@ -146,9 +148,11 @@ function Cart(props) {
                                 </div>
                                 <div className="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                                     <h5 className="mb-0 ps-4 me-4">Total</h5>
-                                    <p className="mb-0 pe-4">${total + 3}</p>
+                                    {/* <p className="mb-0 pe-4">${total + 3}</p> */}
                                 </div>
-                                <button className="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Proceed Checkout</button>
+                                <Button>
+                                    Proceed Checkout
+                                </Button>
                             </div>
                         </div>
                     </div>

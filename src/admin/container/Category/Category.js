@@ -25,15 +25,15 @@ function Category(props) {
 
 
     let categorySchema = object({
-        category_name: string().required("please enter name"),
-        category_description: string().required("please enter discription").min(5, "please enter minimum 5 charactore")
+        name: string().required("please enter name"),
+        description: string().required("please enter discription").min(5, "please enter minimum 5 charactore")
 
     });
 
     const formik = useFormik({
         initialValues: {
-            category_name: "",
-            category_description: ""
+            name: "",
+            description: ""
         },
 
         validationSchema: categorySchema,
@@ -60,29 +60,63 @@ function Category(props) {
         setUpdate(null)
     };
 
-    const getData = () => {
-        const localData = JSON.parse(localStorage.getItem("category"));
+    const getData = async () => {
+        // const localData = JSON.parse(localStorage.getItem("category"));
 
-        if (localData) {
-            setData(localData)
+        // if (localData) {
+        //     setData(localData)
+        // }
+
+        try {
+            const response = await fetch("http://localhost:8000/api/v1/categories/list-categories")
+            const data = await response.json()
+            setData(data.data)
+
+
+        } catch (error) {
+            console.log(error);
         }
+
+
     }
 
     React.useEffect(() => {
         getData();
     }, [])
 
-    const handleAdd = (data) => {
+    const handleAdd = async (data) => {
         console.log(data);
-        let localData = JSON.parse(localStorage.getItem("category"));
-        let rNo = Math.floor(Math.random() * 1000);
+        // let localData = JSON.parse(localStorage.getItem("category"));
+        // let rNo = Math.floor(Math.random() * 1000);
 
-        if (localData) {
-            localData.push({ ...data, id: rNo });
-            localStorage.setItem("category", JSON.stringify(localData));
-        } else {
-            localStorage.setItem("category", JSON.stringify([{ ...data, id: rNo }]));
+        // if (localData) {
+        //     localData.push({ ...data, id: rNo });
+        //     localStorage.setItem("category", JSON.stringify(localData));
+        // } else {
+        //     localStorage.setItem("category", JSON.stringify([{ ...data, id: rNo }]));
+        // }
+
+        try {
+           const response =  await fetch("http://localhost:8000/api/v1/categories/add-categories", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+
+
+
+
+            });
+            const data1 = await response.json()
+            console.log(data1);
+
+
+
+        } catch (error) {
+            console.log(error);
         }
+
         getData();
     }
 
@@ -90,12 +124,21 @@ function Category(props) {
 
 
 
-    const hendaldelet = (data) => {
-        let localData = JSON.parse(localStorage.getItem("category"));
+    const hendaldelet = async (data) => {
+        // let localData = JSON.parse(localStorage.getItem("category"));
 
-        let fdata = localData.filter((v) => v.id !== data.id)
+        // let fdata = localData.filter((v) => v.id !== data.id)
 
-        localStorage.setItem("category", JSON.stringify(fdata));
+        // localStorage.setItem("category", JSON.stringify(fdata));
+
+        try {
+            await fetch("http://localhost:8000/api/v1/categories/delete-catagories/" + data._id, {
+                method: "DELETE",
+              
+            })
+        } catch (error) {
+            console.log(error);
+        }
 
         getData()
 
@@ -104,24 +147,32 @@ function Category(props) {
     const hendalEdit = (data) => {
         setOpen(true);
         setValues(data)
-        setUpdate(data.id)
+        setUpdate(data._id)
     }
 
-    const hendalUpdateData = (data) => {
-        let localData = JSON.parse(localStorage.getItem("category"));
+    const hendalUpdateData = async(data) => {
+        // let localData = JSON.parse(localStorage.getItem("category"));
 
-        let index = localData.findIndex((v) => v.id === data.id)
+        // let index = localData.findIndex((v) => v.id === data.id)
 
-        localData[index] = data
+        // localData[index] = data
 
-        localStorage.setItem("category", JSON.stringify(localData));
+        // localStorage.setItem("category", JSON.stringify(localData));
+
+        await fetch("http://localhost:8000/api/v1/categories/update-categories/" + data._id,{
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
 
         getData()
     }
 
     const columns = [
-        { field: 'category_name', headerName: 'Name', width: 130 },
-        { field: 'category_description', headerName: 'Description', width: 130 },
+        { field: 'name', headerName: 'Name', width: 130 },
+        { field: 'description', headerName: 'Description', width: 130 },
         {
             field: 'Action',
             headerName: 'Action',
@@ -158,32 +209,32 @@ function Category(props) {
                         <DialogContent>
                             <TextField
                                 margin="dense"
-                                id="category_name"
-                                name="category_name"
+                                id="name"
+                                name="name"
                                 label="Category Name"
                                 type="text"
                                 fullWidth
                                 variant="standard"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.category_name}
-                                error={errors.category_name && touched.category_name ? true : false}
-                                helperText={errors.category_name && touched.category_name ? errors.category_name : ""}
+                                value={values.name}
+                                error={errors.name && touched.name ? true : false}
+                                helperText={errors.name && touched.name ? errors.name : ""}
 
                             />
                             <TextField
                                 margin="dense"
-                                id="category_description"
-                                name="category_description"
+                                id="description"
+                                name="description"
                                 label="Category Description"
                                 type="text"
                                 fullWidth
                                 variant="standard"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.category_description}
-                                error={errors.category_description && touched.category_description ? true : false}
-                                helperText={errors.category_description && touched.category_description ? errors.category_description : ""}
+                                value={values.description}
+                                error={errors.description && touched.description ? true : false}
+                                helperText={errors.description && touched.description ? errors.description : ""}
                             />
                             <DialogActions>
                                 <Button onClick={handleClose}>Cancel</Button>
@@ -205,6 +256,7 @@ function Category(props) {
                     }}
                     pageSizeOptions={[5, 10]}
                     checkboxSelection
+                    getRowId={row => row._id}
                 />
             </div>
 
@@ -248,15 +300,15 @@ export default Category;
 
 
 //     let categorySchema = object({
-//         category_name: string().required("please enter name"),
-//         category_description: string().required("please enter discription").min(5, "please enter minimum 5 charactore")
+//         name: string().required("please enter name"),
+//         description: string().required("please enter discription").min(5, "please enter minimum 5 charactore")
 
 //     });
 
 //     const formik = useFormik({
 //         initialValues: {
-//             category_name: "",
-//             category_description: ""
+//             name: "",
+//             description: ""
 //         },
 
 //         validationSchema: categorySchema,
@@ -341,8 +393,8 @@ export default Category;
 //     }
 
 //     const columns = [
-//         { field: 'category_name', headerName: 'Name', width: 130 },
-//         { field: 'category_description', headerName: 'Description', width: 130 },
+//         { field: 'name', headerName: 'Name', width: 130 },
+//         { field: 'description', headerName: 'Description', width: 130 },
 //         {
 //             field: 'Action',
 //             headerName: 'Action',
@@ -379,32 +431,32 @@ export default Category;
 //                         <DialogContent>
 //                             <TextField
 //                                 margin="dense"
-//                                 id="category_name"
-//                                 name="category_name"
+//                                 id="name"
+//                                 name="name"
 //                                 label="Category Name"
 //                                 type="text"
 //                                 fullWidth
 //                                 variant="standard"
 //                                 onChange={handleChange}
 //                                 onBlur={handleBlur}
-//                                 value={values.category_name}
-//                                 error={errors.category_name && touched.category_name ? true : false}
-//                                 helperText={errors.category_name && touched.category_name ? errors.category_name : ""}
+//                                 value={values.name}
+//                                 error={errors.name && touched.name ? true : false}
+//                                 helperText={errors.name && touched.name ? errors.name : ""}
 
 //                             />
 //                             <TextField
 //                                 margin="dense"
-//                                 id="category_description"
-//                                 name="category_description"
+//                                 id="description"
+//                                 name="description"
 //                                 label="Category Description"
 //                                 type="text"
 //                                 fullWidth
 //                                 variant="standard"
 //                                 onChange={handleChange}
 //                                 onBlur={handleBlur}
-//                                 value={values.category_description}
-//                                 error={errors.category_description && touched.category_description ? true : false}
-//                                 helperText={errors.category_description && touched.category_description ? errors.category_description : ""}
+//                                 value={values.description}
+//                                 error={errors.description && touched.description ? true : false}
+//                                 helperText={errors.description && touched.description ? errors.description : ""}
 //                             />
 //                             <DialogActions>
 //                                 <Button onClick={handleClose}>Cancel</Button>

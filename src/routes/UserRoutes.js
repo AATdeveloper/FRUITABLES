@@ -9,9 +9,9 @@ import Cart from '../users/container/Cart/Cart';
 // import Chackout from '../users/container/Chackout/Chackout';
 import Testimonial from '../users/container/testimonial/Testimonial';
 import Error from '../users/container/404Error/Error';
-// import Contact from '../users/container/Contact/Contact';
 import PrivateRoutes from './PrivateRoutes';
 import { ThemeContext } from '../contex/ThemeContext';
+import Contact from '../users/container/contact/Contact';
 
 function UserRoutes(props) {
     const theme = useContext(ThemeContext);
@@ -34,7 +34,7 @@ function UserRoutes(props) {
                 <Route exact path="/Testimonial" element={<Testimonial />} />
           
                 <Route exact path="/Error" element={<Error />} />
-                {/* <Route exact path="/Contact" element={<Contact />} /> */}
+                <Route exact path="/contact" element={<Contact />} />
 
             </Routes>
 
