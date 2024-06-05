@@ -108,6 +108,7 @@ export default function Layout({ children }) {
 
     const FruitLayout = [
         { title: "Category", icon: <CategoryIcon />, to: "/admin/Category" },
+        { title: "Subcategories", icon: <AppleIcon />, to: "/admin/subcategories" },
         { title: "Product", icon: <AppleIcon />, to: "/admin/products" },
         { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" },
         { title: "Count", icon: <CountertopsIcon />, to: "/admin/Counter" },
