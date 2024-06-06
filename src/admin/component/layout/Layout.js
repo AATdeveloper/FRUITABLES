@@ -26,6 +26,7 @@ import CountertopsIcon from '@mui/icons-material/Countertops';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import ContactsIcon from '@mui/icons-material/Contacts';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 const drawerWidth = 240;
 
@@ -108,7 +109,7 @@ export default function Layout({ children }) {
 
     const FruitLayout = [
         { title: "Category", icon: <CategoryIcon />, to: "/admin/Category" },
-        { title: "Subcategories", icon: <AppleIcon />, to: "/admin/subcategories" },
+        { title: "Subcategories", icon: <ShoppingCartCheckoutIcon />, to: "/admin/subcategories" },
         { title: "Product", icon: <AppleIcon />, to: "/admin/products" },
         { title: "Review", icon: <RateReviewIcon />, to: "/admin/reviews" },
         { title: "Count", icon: <CountertopsIcon />, to: "/admin/Counter" },

@@ -10,6 +10,7 @@ import Counter from '../admin/container/Counter';
 import Facility from '../admin/container/Facilities/Facility';
 import Coupen from '../admin/container/Coupen/Coupen';
 import Contact from '../admin/container/Contact/Contact';
+import Subcategory from '../admin/container/Subcategory/Subcategory';
 
 
 
@@ -30,6 +31,9 @@ function AdminRoutes(props) {
                 <Route exact path='/Facility' element={<Facility/>}/>
                 <Route exact path='/coupen' element={<Coupen/>}/>
                 <Route exact path='/contact' element={<Contact/>}/>
+                <Route exact path='/subcategories' element={<Subcategory/>}/>
+           
+                
               
             </Routes>
         </Layout>
