@@ -6,6 +6,8 @@ import { feuteditelReducer } from "./shop.reducece";
 import counterSlice from "../slice/counter.slice";
 import cartSlice from "../slice/cart.slice";
 import coupenSlice from "../slice/coupen.slice";
+import { categoryReducer } from "./category.reducer";
+import subcategorySlice from "../slice/subcategory.slice";
 
 export const rootReducer = combineReducers({
     counter: counterReducer,
@@ -14,5 +16,7 @@ export const rootReducer = combineReducers({
     feuteditel:feuteditelReducer,
     counter_slice : counterSlice,
     cart:cartSlice,
-    coupen:coupenSlice
+    coupen:coupenSlice,
+    categories: categoryReducer,
+    subcategories: subcategorySlice
 })
