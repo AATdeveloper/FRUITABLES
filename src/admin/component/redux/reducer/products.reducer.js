@@ -1,27 +1,61 @@
-import { ADD_PRODUCTS, GET_PRODUCTS } from "../ActionType";
+import { ADD_PRODUCTS, DELETE_PRODUCTS, EDIT_PRODUCTS, ERROR_PRODUCTS, GET_PRODUCTS, LOADING_PRODUCTS } from "../ActionType";
 
-const inistialState = {
+const initialState = {
     isLoading: false,
     products: [],
     error: null
-}
+};
 
-
-export const ProductsReducer = (state = inistialState, action) => {
-    console.log(action);
-
+export const ProductsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_PRODUCTS:
-
+        case LOADING_PRODUCTS:
             return {
-                isLodaing: false,
+                ...state,
+                isLoading: true
+            };
+
+        case ERROR_PRODUCTS:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            };
+
+        case GET_PRODUCTS:
+            return {
+                ...state,
+                isLoading: false,
                 products: action.payload,
                 error: null
+            };
 
+        case ADD_PRODUCTS:
+            return {
+                ...state,
+                isLoading: false,
+                products: [...state.products, action.payload],
+                error: null
+            };
 
+        case DELETE_PRODUCTS:
+            return {
+                ...state,
+                isLoading: false,
+                products: state.products.filter(product => product._id !== action.payload),
+                error: null
+            };
 
-            }
+        case EDIT_PRODUCTS:
+            return {
+                ...state,
+                isLoading: false,
+                products: state.products.map(product =>
+                    product._id === action.payload._id ? action.payload : product
+                ),
+                error: null
+            };
+
         default:
-            return state
+            return state;
     }
-}
+};
