@@ -498,7 +498,7 @@ function Products() {
   const products = useSelector((state) => state.products.products);
   const categories = useSelector((state) => state.categories.categories);
   const subcategories = useSelector((state) => state.subcategories.subcategories);
-  console.log("categories,subcategorir");
+  console.log(products, categories,  subcategories);
 
   useEffect(() => {
     dispatch(getProducts());

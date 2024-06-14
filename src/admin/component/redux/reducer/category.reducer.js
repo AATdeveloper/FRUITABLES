@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export const categoryReducer = (state = initialState, action) => {
+    console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",action.type);
     switch (action.type) {
         case LOADING_CATEGORY:
             return {
@@ -22,6 +23,7 @@ export const categoryReducer = (state = initialState, action) => {
             };
 
         case GET_CATEGORY:
+            
             return {
                 isLoading: false,
                 categories: action.payload.data,
